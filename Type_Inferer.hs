@@ -332,11 +332,3 @@ upairs (Application (c,Apply n m,typ) d dd) = (aux_app (conclusion d) (conclusio
 
 derive :: Term -> Derivation
 derive t = subs_der (unify (upairs (derive1 t))) (derive1 t)
-
-
-------------------------- Exam use
--- Q3a
-m = Lambda "f" (Lambda "g" (Lambda "x" (Apply (Variable "g") (Apply (Apply (Variable "f") (Variable "x")) (Variable "x")))))
-a1 = Lambda "x" (Lambda "y" (Variable "x"))
-a2 = Lambda "x" (Lambda "y" (Lambda "z" (Variable "y")))
-a3 = Lambda "w" (Variable "w")
